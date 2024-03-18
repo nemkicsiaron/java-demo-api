@@ -1,4 +1,4 @@
-# Java Demo REST API
+# Java Todo REST API
 
 ## Overview
 
