@@ -1,16 +1,17 @@
 package com.example.demoapi.controller;
 
-import com.example.demoapi.model.Product;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demoapi.model.Todo;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+import java.util.HashSet;
+
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/todos")
 public class ProductController {
 
     @GetMapping("/hello")
@@ -24,10 +25,10 @@ public class ProductController {
     }
 
     @GetMapping("/demo")
-    public ResponseEntity<Product> getDemoProduct() {
+    public ResponseEntity<Todo> getDemoProduct() {
         try {
-            Product product = new Product(1, "Demo product", 250, 2, "ÁÉŐÚŰÖÜÓ");
-            return new ResponseEntity<Product>(product, HttpStatus.OK);
+            Todo todo = new Todo();
+            return new ResponseEntity<Todo>(todo, HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
